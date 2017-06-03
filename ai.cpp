@@ -152,7 +152,7 @@ int main()
 	}
 	for(int i=1;i<=7;i++)
 		while(g.m[i][g.c[i]+1]) ++g.c[i];
-	cin>>ww; g.p=ww; g.s=10; alc(g); int t=clock();
+	cin>>ww; g.p=ww; g.s=5; alc(g); int t=clock();
 	while((clock()-t)<2*CLOCKS_PER_SEC) try_play();
 	ld cb=wss/pss*100;
 	static char ss[23333];
