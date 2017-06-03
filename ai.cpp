@@ -53,6 +53,7 @@ int jud()
 			}
 		}
 	}
+	return 0;
 }
 bool cango(int x) {return c[x]<7;}
 sta go(int x)
@@ -68,6 +69,7 @@ bool end()
 	for(int i=1;i<=7;i++) ok|=c[i]!=7;
 	if(!ok||s<=0) return 1;
 	if(jud()) return 1;
+	return 0;
 }
 void dbg()
 {
