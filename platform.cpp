@@ -44,7 +44,20 @@ int play2()
 	cout<<"Íæ¼Ò2ÇëÑ¡ÔñÁÐ£º";
 	int x; cin>>x; return x;
 }
-int AI()
+int AI1()
+{
+	FILE*fp=fopen("tmp","w");
+	for(int i=7;i>=1;--i,fprintf(fp,"\n"))
+		for(int j=1;j<=7;j++)
+			fprintf(fp,"%d ",m[j][i]);
+	fprintf(fp,"1\n");
+	fclose(fp);
+	system("ai <tmp >op");
+	fp=fopen("op","r");
+	int x; fscanf(fp,"%d",&x);
+	return x;
+}
+int AI2()
 {
 	FILE*fp=fopen("tmp","w");
 	for(int i=7;i>=1;--i,fprintf(fp,"\n"))
@@ -57,8 +70,14 @@ int AI()
 	int x; fscanf(fp,"%d",&x);
 	return x;
 }
+/*
+//If you prefer play second
+#define P1 AI1
+#define P2 play2
+*/
+//If you prefer play first
 #define P1 play1
-#define P2 AI
+#define P2 AI2
 string rec="";
 void playit(int x)
 {
