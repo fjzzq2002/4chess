@@ -156,7 +156,7 @@ int main()
 	while((clock()-t)<2*CLOCKS_PER_SEC) try_play();
 	ld cb=wss/pss*100;
 	static char ss[23333];
-	sprintf(ss,"title AI: %.3lf%% win prob  out of %d matches",cb,pss);
+	sprintf(ss,"title AI%d: %.3f%% win prob  out of %d matches",ww,cb,pss);
 	system(ss); int l=jc(1,0);
 	printf("%d\n",l);
 }
